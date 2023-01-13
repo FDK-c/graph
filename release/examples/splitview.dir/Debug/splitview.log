@@ -1,0 +1,5 @@
+﻿  Building Custom Rule D:/graph/glfw-3.3.8/examples/CMakeLists.txt
+  splitview.c
+  glad_gl.c
+  正在生成代码...
+  splitview.vcxproj -> D:\graph\release\examples\Debug\splitview.exe

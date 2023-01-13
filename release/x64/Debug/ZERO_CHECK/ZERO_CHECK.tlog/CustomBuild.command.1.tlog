@@ -1,0 +1,10 @@
+^D:\GRAPH\RELEASE\CMAKEFILES\FEBAB356881C662C3A4EB3D1F3F2B6BB\GENERATE.STAMP.RULE
+setlocal
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -SD:/graph/glfw-3.3.8 -BD:/graph/release --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/graph/release/GLFW.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
