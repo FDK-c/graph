@@ -1,0 +1,16 @@
+D:/graph/assimpBuild/CMakeFiles/uninstall.dir
+D:/graph/assimpBuild/CMakeFiles/UpdateAssimpLibsDebugSymbolsAndDLLs.dir
+D:/graph/assimpBuild/CMakeFiles/INSTALL.dir
+D:/graph/assimpBuild/CMakeFiles/ALL_BUILD.dir
+D:/graph/assimpBuild/CMakeFiles/ZERO_CHECK.dir
+D:/graph/assimpBuild/contrib/zlib/CMakeFiles/zlibstatic.dir
+D:/graph/assimpBuild/contrib/zlib/CMakeFiles/INSTALL.dir
+D:/graph/assimpBuild/contrib/zlib/CMakeFiles/ALL_BUILD.dir
+D:/graph/assimpBuild/code/CMakeFiles/assimp.dir
+D:/graph/assimpBuild/code/CMakeFiles/INSTALL.dir
+D:/graph/assimpBuild/tools/assimp_cmd/CMakeFiles/assimp_cmd.dir
+D:/graph/assimpBuild/tools/assimp_cmd/CMakeFiles/INSTALL.dir
+D:/graph/assimpBuild/test/CMakeFiles/gtest.dir
+D:/graph/assimpBuild/test/CMakeFiles/unit.dir
+D:/graph/assimpBuild/test/CMakeFiles/INSTALL.dir
+D:/graph/assimpBuild/test/headercheck/CMakeFiles/INSTALL.dir

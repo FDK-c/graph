@@ -1,0 +1,22 @@
+﻿  Building Custom Rule D:/graph/assimp-3.3.1/tools/assimp_cmd/CMakeLists.txt
+  CompareDump.cpp
+  ImageExtractor.cpp
+  Main.cpp
+  WriteDumb.cpp
+  Info.cpp
+  Export.cpp
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(295,43): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(299,48): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(302,63): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(324,77): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(371,66): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(377,65): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(385,62): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(386,64): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(396,67): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(408,74): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(475,52): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(512,87): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(519,85): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\graph\assimp-3.3.1\tools\assimp_cmd\WriteDumb.cpp(526,85): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+  assimp_cmd.vcxproj -> D:\graph\assimpBuild\tools\assimp_cmd\Debug\assimp.exe

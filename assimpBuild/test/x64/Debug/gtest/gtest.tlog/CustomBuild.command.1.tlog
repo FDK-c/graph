@@ -1,0 +1,134 @@
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-MKDIR.RULE
+setlocal
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -Dcfgdir=/Debug -P D:/graph/assimpBuild/test/gtest/tmp/gtest-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-DOWNLOAD.RULE
+setlocal
+cd D:\graph\assimpBuild\test\gtest\src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -Dconfig=Debug -P D:/graph/assimpBuild/test/gtest/src/gtest-stamp/gtest-download-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-UPDATE.RULE
+setlocal
+cd D:\graph\assimpBuild\test\gtest\src\gtest
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -P D:/graph/assimpBuild/test/gtest/tmp/gtest-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-PATCH.RULE
+setlocal
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-CONFIGURE.RULE
+setlocal
+cd D:\graph\assimpBuild\test\gtest\src\gtest-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -Dconfig=Debug -P D:/graph/assimpBuild/test/gtest/src/gtest-stamp/gtest-configure-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-BUILD.RULE
+setlocal
+cd D:\graph\assimpBuild\test\gtest\src\gtest-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -Dconfig=Debug -P D:/graph/assimpBuild/test/gtest/src/gtest-stamp/gtest-build-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\BA356BDC1F16627CB0FC1713D137AB0E\GTEST-INSTALL.RULE
+setlocal
+cd D:\graph\assimpBuild\test\gtest\src\gtest-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\0F7E5C4B1B0D8B92C8D33785363EAB5A\GTEST-COMPLETE.RULE
+setlocal
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E make_directory D:/graph/assimpBuild/test/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/CMakeFiles/Debug/gtest-complete
+if %errorlevel% neq 0 goto :cmEnd
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -E touch D:/graph/assimpBuild/test/gtest/src/gtest-stamp/Debug/gtest-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\592626008D87C8834C79F43D4A0000D2\GTEST.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\GRAPH\ASSIMP-3.3.1\TEST\CMAKELISTS.TXT
+setlocal
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -SD:/graph/assimp-3.3.1 -BD:/graph/assimpBuild --check-stamp-file D:/graph/assimpBuild/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

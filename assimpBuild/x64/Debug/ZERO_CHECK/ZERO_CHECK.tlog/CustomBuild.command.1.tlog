@@ -1,0 +1,10 @@
+^D:\GRAPH\ASSIMPBUILD\CMAKEFILES\A0DF4843D595B06A976E5C989B99675D\GENERATE.STAMP.RULE
+setlocal
+D:\graph\cmake-3.25.0-windows-x86_64\bin\cmake.exe -SD:/graph/assimp-3.3.1 -BD:/graph/assimpBuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/graph/assimpBuild/Assimp.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

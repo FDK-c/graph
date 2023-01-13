@@ -1,0 +1,13 @@
+Cloning into 'gtest'...
+error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, errno 10054
+fatal: expected flush after ref listing
+Cloning into 'gtest'...
+error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, errno 10054
+fatal: expected flush after ref listing
+Cloning into 'gtest'...
+error: RPC failed; curl 28 OpenSSL SSL_read: Connection was reset, errno 10054
+fatal: expected flush after ref listing
+CMake Error at D:/graph/assimpBuild/test/gtest/tmp/gtest-gitclone.cmake:39 (message):
+  Failed to clone repository: 'https://github.com/google/googletest.git'
+
+

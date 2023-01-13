@@ -1,0 +1,69 @@
+﻿  Building Custom Rule D:/graph/assimp-3.3.1/test/CMakeLists.txt
+  CCompilerTest.c
+  Main.cpp
+  Version.cpp
+  AssimpAPITest.cpp
+  utBlendImportAreaLight.cpp
+  utBlendImportMaterials.cpp
+  utColladaExportCamera.cpp
+  utColladaExportLight.cpp
+  utFastAtof.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\Main.cpp)
+  utFindDegenerates.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utBlendImportMaterials.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\AssimpAPITest.cpp)
+  utFindInvalidData.cpp
+  utFixInfacingNormals.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utBlendImportAreaLight.cpp)
+  utGenNormals.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utColladaExportCamera.cpp)
+  utImporter.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utColladaExportLight.cpp)
+  utImproveCacheLocality.cpp
+  utIOSystem.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utFastAtof.cpp)
+  utIssues.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utFindDegenerates.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utFindInvalidData.cpp)
+  utJoinVertices.cpp
+  utLimitBoneWeights.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utFixInfacingNormals.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utGenNormals.cpp)
+  utMaterialSystem.cpp
+  utMatrix3x3.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utImporter.cpp)
+  utMatrix4x4.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utIOSystem.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utIssues.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utImproveCacheLocality.cpp)
+  utPretransformVertices.cpp
+  utRemoveComments.cpp
+  utRemoveComponent.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utLimitBoneWeights.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utJoinVertices.cpp)
+  utRemoveRedundantMaterials.cpp
+  utScenePreprocessor.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utMatrix3x3.cpp)
+  utSharedPPData.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utMaterialSystem.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utMatrix4x4.cpp)
+  utStringUtils.cpp
+  utSortByPType.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utRemoveComponent.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utRemoveComments.cpp)
+  utSplitLargeMeshes.cpp
+  utTargetAnimation.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utPretransformVertices.cpp)
+  utTextureTransform.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utRemoveRedundantMaterials.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utSharedPPData.cpp)
+  utTriangulate.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utScenePreprocessor.cpp)
+  utVertexTriangleAdjacency.cpp
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utStringUtils.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utSortByPType.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utSplitLargeMeshes.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utTargetAnimation.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utTextureTransform.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utTriangulate.cpp)
+D:\graph\assimp-3.3.1\test\unit\UnitTestPCH.h(10,10): fatal error C1083: 无法打开包括文件: “gtest/gtest.h”: No such file or directory (编译源文件 D:\graph\assimp-3.3.1\test\unit\utVertexTriangleAdjacency.cpp)

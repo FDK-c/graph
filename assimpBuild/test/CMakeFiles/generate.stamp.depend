@@ -1,0 +1,17 @@
+# CMake generation dependency list for this directory.
+D:/graph/assimp-3.3.1/cmake-modules/AddGTest.cmake
+D:/graph/assimp-3.3.1/test/CMakeLists.txt
+D:/graph/assimpBuild/test/gtest/tmp/gtest-mkdirs.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/CheckIncludeFile.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/CheckLibraryExists.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/ExternalProject.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/ExternalProject/RepositoryInfo.txt.in
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/ExternalProject/cfgcmd.txt.in
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/ExternalProject/gitclone.cmake.in
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/ExternalProject/gitupdate.cmake.in
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/ExternalProject/mkdirs.cmake.in
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/FindGit.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/FindPackageMessage.cmake
+D:/graph/cmake-3.25.0-windows-x86_64/share/cmake-3.25/Modules/FindThreads.cmake

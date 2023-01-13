@@ -1,0 +1,13 @@
+﻿  Creating directories for 'gtest'
+  Performing download step (git clone) for 'gtest'
+  CMake Error at gtest-stamp/gtest-download-Debug.cmake:49 (message):
+    Command failed: 1
+  
+     'D:/graph/cmake-3.25.0-windows-x86_64/bin/cmake.exe' '-P' 'D:/graph/assimpBuild/test/gtest/tmp/gtest-gitclone.cmake'
+  
+    See also
+  
+      D:/graph/assimpBuild/test/gtest/src/gtest-stamp/gtest-download-*.log
+  
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(238,5): error MSB8066: “D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-mkdir.rule;D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-download.rule;D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-update.rule;D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-patch.rule;D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-configure.rule;D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-build.rule;D:\graph\assimpBuild\CMakeFiles\ba356bdc1f16627cb0fc1713d137ab0e\gtest-install.rule;D:\graph\assimpBuild\CMakeFiles\0f7e5c4b1b0d8b92c8d33785363eab5a\gtest-complete.rule;D:\graph\assimpBuild\CMakeFiles\592626008d87c8834c79f43d4a0000d2\gtest.rule”的自定义生成已退出，代码为 1。
