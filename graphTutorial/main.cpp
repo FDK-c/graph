@@ -63,153 +63,42 @@ int main()
 		return -1;
 	}
 
-	float vertices[] = {
-		-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-
-		-0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-
-		-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-		-0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-		-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-		-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-		-0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-		-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-
-		 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-		 0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-		 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-		 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-		 0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-		 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-
-		-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-
-		-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
+	float points[] = {
+	-0.5f,  0.5f, 1.0f, 0.0f, 0.0f, // 左上
+	 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, // 右上
+	 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // 右下
+	-0.5f, -0.5f, 1.0f, 1.0f, 0.0f  // 左下
 	};
-
-	unsigned int cubeVBO, cubeVAO;
-	glGenVertexArrays(1, &cubeVAO);
-	glGenBuffers(1, &cubeVBO);
-	glBindVertexArray(cubeVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	unsigned int pointVBO, pointVAO;
+	glGenVertexArrays(1, &pointVAO);
+	glGenBuffers(1, &pointVBO);
+	glBindVertexArray(pointVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(points), &points, GL_STATIC_DRAW);
 	// position attribute
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	//normal attribute
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(1);
-
-	float skyboxVertices[] = {
-		// positions          
-		-1.0f,  1.0f, -1.0f,
-		-1.0f, -1.0f, -1.0f,
-		 1.0f, -1.0f, -1.0f,
-		 1.0f, -1.0f, -1.0f,
-		 1.0f,  1.0f, -1.0f,
-		-1.0f,  1.0f, -1.0f,
-
-		-1.0f, -1.0f,  1.0f,
-		-1.0f, -1.0f, -1.0f,
-		-1.0f,  1.0f, -1.0f,
-		-1.0f,  1.0f, -1.0f,
-		-1.0f,  1.0f,  1.0f,
-		-1.0f, -1.0f,  1.0f,
-
-		 1.0f, -1.0f, -1.0f,
-		 1.0f, -1.0f,  1.0f,
-		 1.0f,  1.0f,  1.0f,
-		 1.0f,  1.0f,  1.0f,
-		 1.0f,  1.0f, -1.0f,
-		 1.0f, -1.0f, -1.0f,
-
-		-1.0f, -1.0f,  1.0f,
-		-1.0f,  1.0f,  1.0f,
-		 1.0f,  1.0f,  1.0f,
-		 1.0f,  1.0f,  1.0f,
-		 1.0f, -1.0f,  1.0f,
-		-1.0f, -1.0f,  1.0f,
-
-		-1.0f,  1.0f, -1.0f,
-		 1.0f,  1.0f, -1.0f,
-		 1.0f,  1.0f,  1.0f,
-		 1.0f,  1.0f,  1.0f,
-		-1.0f,  1.0f,  1.0f,
-		-1.0f,  1.0f, -1.0f,
-
-		-1.0f, -1.0f, -1.0f,
-		-1.0f, -1.0f,  1.0f,
-		 1.0f, -1.0f, -1.0f,
-		 1.0f, -1.0f, -1.0f,
-		-1.0f, -1.0f,  1.0f,
-		 1.0f, -1.0f,  1.0f
-	};
-
-	unsigned int skyboxVBO, skyboxVAO;
-	glGenVertexArrays(1, &skyboxVAO);
-	glGenBuffers(1, &skyboxVBO);
-	glBindVertexArray(skyboxVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), skyboxVertices, GL_STATIC_DRAW);
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+	glBindVertexArray(0);
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_BLEND);
 
-	vector<std::string> faces
-	{
-		"resources/skybox/right.jpg",
-		"resources/skybox/left.jpg",
-		"resources/skybox/top.jpg",
-		"resources/skybox/bottom.jpg",
-		"resources/skybox/front.jpg",
-		"resources/skybox/back.jpg"
-	};
-	unsigned int cubemapTexture = loadCubemap(faces);
-
-	shader* cubeShader = new shader("depthTest.vs", "depthTest.frag");
-	shader* skyboxShader = new shader("skybox.vs", "skybox.frag");
 	shader* meshShader = new shader("model.vs", "model.frag");
+	Model* meshModel = new Model("resources/nanosuit/nanosuit.obj");
+	shader* normalShader = new shader("depthTest.vs", "depthTest.frag", "cube.geom");
 
-	unsigned int uniformBlockIndexCube = glGetUniformBlockIndex(cubeShader->ID, "Matrices");
-	unsigned int uniformBlockIndexSkybox = glGetUniformBlockIndex(skyboxShader->ID, "Matrices");
-	unsigned int uniformBlockIndexMesh = glGetUniformBlockIndex(meshShader->ID, "Matrices");
+	ourCamera = new camera();
 
-	glUniformBlockBinding(cubeShader->ID, uniformBlockIndexCube, 0);
-	glUniformBlockBinding(skyboxShader->ID, uniformBlockIndexSkybox, 0);
-	glUniformBlockBinding(meshShader->ID, uniformBlockIndexMesh, 0);
+	unsigned int uniformMeshMatricesIndex = glGetUniformBlockIndex(meshShader->ID, "Matrices");
+	unsigned int uniformNormalMatricesIndex = glGetUniformBlockIndex(normalShader->ID, "Matrices");
+	glUniformBlockBinding(meshShader->ID, uniformMeshMatricesIndex, 0);
+	glUniformBlockBinding(normalShader->ID, uniformNormalMatricesIndex, 0);
 
 	unsigned int uboMatrices;
 	glGenBuffers(1, &uboMatrices);
 	glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
 	glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
 	glBindBufferRange(GL_UNIFORM_BUFFER, 0, uboMatrices, 0, 2 * sizeof(glm::mat4));
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
-
-	Model* meshModel = new Model("resources/nanosuit/nanosuit.obj");
-
-	ourCamera = new camera();
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -227,37 +116,18 @@ int main()
 		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
 		glm::mat4 view = ourCamera->GetViewMatrix();
 		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
-
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 		meshShader->use();
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
 		meshShader->setMat4("model", model);
-		meshShader->setVec3("cameraPos", ourCamera->cameraPos);
-		meshShader->setFloat("currentFrame", currentFrame);
-		glActiveTexture(GL_TEXTURE4);
-		meshShader->setInt("skyBox", 4);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
 		meshModel->Draw(*meshShader);
-		
-		cubeShader->use();
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 0.0f));
-		cubeShader->setMat4("model", model);
-		glBindVertexArray(cubeVAO);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		glDepthMask(GL_FALSE);
-		glDepthFunc(GL_LEQUAL);
-		skyboxShader->use();
-		skyboxShader->setVec3("cameraPos", ourCamera->cameraPos);
-		glBindVertexArray(skyboxVAO);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		glDepthMask(GL_TRUE);
-		glDepthFunc(GL_LESS);
+		normalShader->use();
+		normalShader->setMat4("model", model);
+		meshModel->Draw(*normalShader);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

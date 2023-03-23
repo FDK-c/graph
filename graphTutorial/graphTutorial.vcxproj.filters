@@ -38,9 +38,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="light.vs">
-      <Filter>源文件</Filter>
-    </None>
     <None Include="cube.frag">
       <Filter>shader</Filter>
     </None>
@@ -75,6 +72,12 @@
       <Filter>shader</Filter>
     </None>
     <None Include="skybox.frag">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="cube.geom">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="light.vs">
       <Filter>shader</Filter>
     </None>
   </ItemGroup>

@@ -26,16 +26,19 @@ public:
 
 		vShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
 		fShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
-		try 
+
+		try
 		{
 			vShaderFile.open(vertexPath);
 			fShaderFile.open(framentPath);
-			stringstream vShaderStream, fShaderStream;
+			stringstream vShaderStream, fShaderStream, gShaderStream;
 			//读取文件的缓冲内容到数据流中
-			vShaderStream<< vShaderFile.rdbuf();
+			vShaderStream << vShaderFile.rdbuf();
 			fShaderStream << fShaderFile.rdbuf();
+
 			vShaderFile.close();
 			fShaderFile.close();
+
 			vertexCode = vShaderStream.str();
 			framentCode = fShaderStream.str();
 		}
@@ -56,15 +59,83 @@ public:
 		fragment = glCreateShader(GL_FRAGMENT_SHADER);
 		glShaderSource(fragment, 1, &fShaderCode, NULL);
 		glCompileShader(fragment);
-		checkCompileErrors(vertex, "FRAGMENT");
+		checkCompileErrors(fragment, "FRAGMENT");
 
 		ID = glCreateProgram();
 		glAttachShader(ID, vertex);
 		glAttachShader(ID, fragment);
 		glLinkProgram(ID);
-		checkCompileErrors(vertex, "PROGRAM");
+		checkCompileErrors(ID, "PROGRAM");
 
 		glDeleteShader(vertex);
+		glDeleteShader(fragment);
+	}
+
+	shader(const char* vertexPath, const char* framentPath, const char* geometryPath)
+	{
+		string vertexCode;
+		string framentCode;
+		string geometryCode;
+		ifstream vShaderFile;
+		ifstream fShaderFile;
+		ifstream gShaderFile;
+
+		vShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
+		fShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
+		gShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
+		try 
+		{
+			vShaderFile.open(vertexPath);
+			fShaderFile.open(framentPath);
+			gShaderFile.open(geometryPath);
+			stringstream vShaderStream, fShaderStream, gShaderStream;
+			//读取文件的缓冲内容到数据流中
+			vShaderStream<< vShaderFile.rdbuf();
+			fShaderStream << fShaderFile.rdbuf();
+			gShaderStream << gShaderFile.rdbuf();
+
+			vShaderFile.close();
+			fShaderFile.close();
+			gShaderFile.close();
+
+			vertexCode = vShaderStream.str();
+			framentCode = fShaderStream.str();
+			geometryCode = gShaderStream.str();
+		}
+		catch (ifstream::failure e)
+		{
+			cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << endl;
+		}
+
+		const char* vShaderCode = vertexCode.c_str();
+		const char* fShaderCode = framentCode.c_str();
+		const char* gShaderCode = geometryCode.c_str();
+
+		unsigned int vertex, fragment, geometry;
+		vertex = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertex, 1, &vShaderCode, NULL);
+		glCompileShader(vertex);
+		checkCompileErrors(vertex, "VERTEX");
+
+		geometry = glCreateShader(GL_GEOMETRY_SHADER);
+		glShaderSource(geometry, 1, &gShaderCode, NULL);
+		glCompileShader(geometry);
+		checkCompileErrors(geometry, "GEOMETRY");
+
+		fragment = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragment, 1, &fShaderCode, NULL);
+		glCompileShader(fragment);
+		checkCompileErrors(fragment, "FRAGMENT");
+
+		ID = glCreateProgram();
+		glAttachShader(ID, vertex);
+		glAttachShader(ID, geometry);
+		glAttachShader(ID, fragment);
+		glLinkProgram(ID);
+		checkCompileErrors(ID, "PROGRAM");
+
+		glDeleteShader(vertex);
+		glDeleteShader(geometry);
 		glDeleteShader(fragment);
 
 	}

@@ -8,16 +8,11 @@ layout (std140) uniform Matrices
     mat4 view;
 };
 
-out vec3 Position;
-out vec3 Normal;
-out vec2 TexCoords;
-
 uniform mat4 model;
+out vec2 TexCoords;
 
 void main()
 {
-    Normal = aNormal;
     TexCoords = aTexCoords;
-    gl_Position = projection * view * model * vec4(aPos, 1.0);
-    Position =  vec3(model * vec4(aPos, 1.0));
+    gl_Position = projection * view * model * vec4(aPos, 1.0); 
 }

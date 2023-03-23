@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cube.frag" />
+    <None Include="cube.geom" />
     <None Include="cube.vs" />
     <None Include="depthTest.frag" />
     <None Include="depthTest.vs" />
