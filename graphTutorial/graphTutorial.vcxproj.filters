@@ -80,6 +80,9 @@
     <None Include="light.vs">
       <Filter>shader</Filter>
     </None>
+    <None Include="planet.vs">
+      <Filter>shader</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="container2.png">

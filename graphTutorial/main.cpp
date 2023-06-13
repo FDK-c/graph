@@ -28,6 +28,7 @@ camera* ourCamera;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+glm::mat4* setRockModeleMatrices(int amount);
 void processInput(GLFWwindow* window);
 unsigned int loadTexture(char const* path);
 unsigned int loadCubemap(vector<string> faces);
@@ -63,42 +64,44 @@ int main()
 		return -1;
 	}
 
-	float points[] = {
-	-0.5f,  0.5f, 1.0f, 0.0f, 0.0f, // 左上
-	 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, // 右上
-	 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // 右下
-	-0.5f, -0.5f, 1.0f, 1.0f, 0.0f  // 左下
-	};
-	unsigned int pointVBO, pointVAO;
-	glGenVertexArrays(1, &pointVAO);
-	glGenBuffers(1, &pointVBO);
-	glBindVertexArray(pointVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(points), &points, GL_STATIC_DRAW);
-	// position attribute
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
-	glBindVertexArray(0);
 	glEnable(GL_DEPTH_TEST);
 
-	shader* meshShader = new shader("model.vs", "model.frag");
-	Model* meshModel = new Model("resources/nanosuit/nanosuit.obj");
-	shader* normalShader = new shader("depthTest.vs", "depthTest.frag", "cube.geom");
+	shader* shaderPlanet = new shader("model.vs", "model.frag");
+	Model* modelPlanet = new Model("resources/planet/planet.obj");
+	shader* shaderRock = new shader("planet.vs", "model.frag");
+	Model* modelRock = new Model("resources/rock/rock.obj");
 
 	ourCamera = new camera();
 
-	unsigned int uniformMeshMatricesIndex = glGetUniformBlockIndex(meshShader->ID, "Matrices");
-	unsigned int uniformNormalMatricesIndex = glGetUniformBlockIndex(normalShader->ID, "Matrices");
-	glUniformBlockBinding(meshShader->ID, uniformMeshMatricesIndex, 0);
-	glUniformBlockBinding(normalShader->ID, uniformNormalMatricesIndex, 0);
+	int amount = 500;
+	glm::mat4* rockModel = setRockModeleMatrices(amount);
+	unsigned int uboRock;
+	glGenBuffers(1, &uboRock);
+	glBindBuffer(GL_ARRAY_BUFFER, uboRock);
+	glBufferData(GL_ARRAY_BUFFER, amount * sizeof(glm::mat4), &rockModel[0], GL_STATIC_DRAW);
+	
+	for (unsigned int i = 0; i < modelRock->meshes.size(); i++)
+	{
+		unsigned int VAO = modelRock->meshes[i].VAO;
+		glBindVertexArray(VAO);
+		// 顶点属性
+		GLsizei vec4Size = sizeof(glm::vec4);
+		glEnableVertexAttribArray(3);
+		glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)0);
+		glEnableVertexAttribArray(4);
+		glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)(vec4Size));
+		glEnableVertexAttribArray(5);
+		glVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)(2 * vec4Size));
+		glEnableVertexAttribArray(6);
+		glVertexAttribPointer(6, 4, GL_FLOAT, GL_FALSE, 4 * vec4Size, (void*)(3 * vec4Size));
 
-	unsigned int uboMatrices;
-	glGenBuffers(1, &uboMatrices);
-	glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
-	glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
-	glBindBufferRange(GL_UNIFORM_BUFFER, 0, uboMatrices, 0, 2 * sizeof(glm::mat4));
+		glVertexAttribDivisor(3, 1);
+		glVertexAttribDivisor(4, 1);
+		glVertexAttribDivisor(5, 1);
+		glVertexAttribDivisor(6, 1);
+
+		glBindVertexArray(0);
+	}
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -110,25 +113,35 @@ int main()
 
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-
-		glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+		
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
 		glm::mat4 view = ourCamera->GetViewMatrix();
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
-		meshShader->use();
+		//行星
+		shaderPlanet->use();
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
-		meshShader->setMat4("model", model);
-		meshModel->Draw(*meshShader);
+		model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(currentFrame), glm::vec3(4.0f, 4.0f, 4.0f));
+		shaderPlanet->setMat4("model", model);
+		shaderPlanet->setMat4("projection", projection);
+		shaderPlanet->setMat4("view", view);
+		modelPlanet->Draw(*shaderPlanet);
 
-		normalShader->use();
-		normalShader->setMat4("model", model);
-		meshModel->Draw(*normalShader);
-
+		//小行星
+		shaderRock->use();
+		shaderRock->setInt("texture_diffuse1", 0);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, modelRock->textures_loaded[0].id);
+		shaderRock->setMat4("projection", projection);
+		shaderRock->setMat4("view", view);
+		for (unsigned int i = 0; i < modelRock->meshes.size(); i++)
+		{
+			glBindVertexArray(modelRock->meshes[i].VAO);
+			glDrawElementsInstanced(
+				GL_TRIANGLES, modelRock->meshes[i].indices.size(), GL_UNSIGNED_INT, 0, amount
+			);
+		}
+		
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
@@ -268,4 +281,39 @@ unsigned int createFrameBuffer(unsigned int &textureColorbuffer)
 		cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << endl;
 
 	return framebuffer;
+}
+
+glm::mat4* setRockModeleMatrices(int amount)
+{	 
+
+	srand(glfwGetTime()); // 初始化随机种子    
+	float radius = 20.f;
+	float offset = 1.0f;
+	glm::mat4* rockModels = new glm::mat4[amount];
+	for (unsigned int i = 0; i < amount; i++)
+	{
+		glm::mat4 model = glm::mat4(1.0f);
+		// 1. translation: displace along circle with 'radius' in range [-offset, offset]
+		float angle = (float)i / (float)amount * 360.0f;
+		float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+		float x = sin(angle) * radius + displacement;
+		displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+		float y = displacement * 0.4f; // keep height of asteroid field smaller compared to width of x and z
+		displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+		float z = cos(angle) * radius + displacement;
+		model = glm::translate(model, glm::vec3(x, y, z));
+
+		// 2. scale: Scale between 0.05 and 0.25f
+		float scale = static_cast<float>((rand() % 20) / 100.0 + 0.05);
+		model = glm::scale(model, glm::vec3(scale));
+
+		// 3. rotation: add random rotation around a (semi)randomly picked rotation axis vector
+		float rotAngle = static_cast<float>((rand() % 360));
+		model = glm::rotate(model, rotAngle, glm::vec3(0.4f, 0.6f, 0.8f));
+
+		// 4. 添加到矩阵的数组中
+		rockModels[i] = model;
+	}
+
+	return rockModels;
 }

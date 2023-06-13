@@ -1,2 +1,8 @@
-﻿  shader.cpp
+﻿  main.cpp
+D:\graph\graphTutorial\main.cpp(92,82): warning C4312: “类型强制转换”: 从“GLsizei”转换到更大的“void *”
+D:\graph\graphTutorial\main.cpp(94,86): warning C4312: “类型强制转换”: 从“GLsizei”转换到更大的“void *”
+D:\graph\graphTutorial\main.cpp(96,86): warning C4312: “类型强制转换”: 从“GLsizei”转换到更大的“void *”
+D:\graph\graphTutorial\main.cpp(142,4): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
+D:\graph\graphTutorial\main.cpp(289,19): warning C4244: “参数”: 从“double”转换到“unsigned int”，可能丢失数据
+D:\graph\graphTutorial\main.cpp(293,29): warning C4018: “<”: 有符号/无符号不匹配
   graphTutorial.vcxproj -> D:\graph\graphTutorial\x64\Debug\graphTutorial.exe

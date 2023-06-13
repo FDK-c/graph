@@ -161,6 +161,7 @@
     <None Include="light.vs" />
     <None Include="model.frag" />
     <None Include="model.vs" />
+    <None Include="planet.vs" />
     <None Include="screen.frag" />
     <None Include="screen.vs" />
     <None Include="skybox.frag" />
